@@ -1,0 +1,39 @@
+{
+  "name": "@emp/react-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev": "emp dev",
+    "dev:hot": "emp dev --hot",
+    "build": "emp build",
+    "build:ts": "emp build -t",
+    "build:lab": "emp build --env lab",
+    "tss": "emp tss http://localhost:8001/index.d.ts -n @emp-react-base.d.ts",
+    "start": "emp serve",
+    "stat": "emp build --analyze"
+  },
+  "devDependencies": {
+    "@efox/emp-cli": "latest",
+    "@efox/emp-tsconfig": "latest",
+    "@efox/eslint-config-react-prittier-ts": "^1.1.0",
+    "@types/react": "^16.9.55",
+    "@types/react-dom": "^16.9.9",
+    "@types/react-router-dom": "^5.1.8",
+    "axios": "^0.21.1"
+  },
+  "dependencies": {
+    "antd": "^4.16.6",
+    "date-fns": "^2.22.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-quill": "^1.3.5",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.1.0",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-saga": "^1.1.3"
+  }
+}
