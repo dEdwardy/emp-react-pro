@@ -5,10 +5,6 @@ import {Provider} from 'react-redux'
 import store, {persistor} from './store'
 import {Login} from './pages/Login/Login'
 import {PersistGate} from 'redux-persist/integration/react'
-// import Hello from './components/Hello'
-// import HelloDEMO from '@emp/react-base/components/Demo'
-// const Hello2 = lazy(() => import('@emp/react-base/components/Demo'))
-// const config = await import('@emp/react-base/configs/index')
 // const App = () => (
 //   <>
 //     <Hello compiler="TypeScript 2" framework="React Project" />

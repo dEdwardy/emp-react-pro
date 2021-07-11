@@ -20,7 +20,7 @@ module.exports = ({config, env, empEnv}) => {
       ...args[0],
       name: 'empReactProject',
       remotes: {
-        '@emp/react-base': 'empReactBase@http://localhost:8001/emp.js',
+        '@emp/react-pro': 'empReactPro@http://localhost:8001/emp.js',
       },
       exposes: {
         './App': 'src/App',
