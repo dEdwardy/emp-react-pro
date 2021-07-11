@@ -2,7 +2,7 @@
 import {Table, Menu, Dropdown} from 'antd'
 import React, {useEffect, useState} from 'react'
 import {getUsers} from '../../api'
-
+import Test from './Test'
 export default function User(props) {
   const columns = [
     {
@@ -52,6 +52,7 @@ export default function User(props) {
   return (
     <div>
       <Table rowKey="id" columns={columns} dataSource={userList} pagination={{showSizeChanger: true}} />
+      <Test />
     </div>
   )
 }

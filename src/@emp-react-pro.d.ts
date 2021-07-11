@@ -6,6 +6,12 @@ declare module '@emp/react-base/components/Demo' {
   const Demo: () => JSX.Element
   export default Demo
 }
+
+declare module '@emp/react-base/pages/User/Test' {
+  /// <reference types="react" />
+  const Test: () => JSX.Element
+  export default Test
+}
 declare module '@emp/react-base/components/Hello' {
   /// <reference types="react" />
   import './common.scss'

@@ -1,7 +1,11 @@
 const path = require('path')
 const packagePath = path.join(path.resolve('./'), 'package.json')
 const {dependencies} = require(packagePath)
-
+console.error(dependencies)
+// 加入注释 让 配置支持 TS 提示
+/**
+ * @type {import('@efox/emp-cli').EMPConfig}
+ */
 module.exports = ({config, env, empEnv}) => {
   console.log('empEnv===> 部署环境变量 serve模式不需要该变量', empEnv, env)
   const port = 8002
@@ -20,6 +24,8 @@ module.exports = ({config, env, empEnv}) => {
       },
       exposes: {
         './App': 'src/App',
+        './pages/User/Test.js': 'src/pages/User/Test.js',
+        './pages/Login/Login': 'src/pages/Login/Login',
         './components/Hello': 'src/components/Hello',
         './helper': 'src/helper',
       },
