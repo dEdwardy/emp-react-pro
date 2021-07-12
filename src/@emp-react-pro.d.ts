@@ -7,6 +7,12 @@ declare module '@emp/react-pro/components/Demo' {
   export default Demo
 }
 
+declare module '@emp/react-pro/App' {
+  /// <reference types="react" />
+  const App: () => JSX.Element
+  export default App
+}
+
 declare module '@emp/react-pro/pages/User/Test' {
   /// <reference types="react" />
   const Test: () => JSX.Element
