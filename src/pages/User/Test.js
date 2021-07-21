@@ -5,6 +5,7 @@ export default function Test() {
     <div>
       <button onClick={() => setA(() => Math.random() * 100)}>set</button>
       {a}
+      xxxxxxxxxxxx
     </div>
   )
 }

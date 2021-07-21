@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <Router>
+        <Router basename="./emp-react-jj-manage">
           <Switch>
             <Route exact path="/login" component={Login}></Route>
             <Route path="/" component={Home}></Route>

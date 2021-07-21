@@ -7,7 +7,7 @@ export const types = {
   FETCH_DICT: 'FETCH_DICT',
 }
 const initialState = {
-  uinfo: {a: 1, b: 2},
+  uinfo: {},
   dict: {},
   loading: false,
 }

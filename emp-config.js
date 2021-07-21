@@ -1,16 +1,16 @@
 const path = require('path')
 const packagePath = path.join(path.resolve('./'), 'package.json')
 const {dependencies} = require(packagePath)
-console.error(dependencies)
+
 // 加入注释 让 配置支持 TS 提示
 /**
  * @type {import('@efox/emp-cli').EMPConfig}
  */
 module.exports = ({config, env, empEnv}) => {
-  console.log('empEnv===> 部署环境变量 serve模式不需要该变量', empEnv, env)
-  const port = 8002
-  const projectName = 'empReactProject'
-  const publicPath = `http://localhost:${port}/`
+  const port = 80
+  const projectName = 'empReactPro'
+  // const publicPath = `http://localhost:${port}`
+  const publicPath = `/emp-react-jj-manage/`
   // 设置项目URL
   config.output.publicPath(publicPath)
   // 设置项目端口
@@ -18,18 +18,21 @@ module.exports = ({config, env, empEnv}) => {
   config.plugin('mf').tap(args => {
     args[0] = {
       ...args[0],
-      name: 'empReactProject',
-      remotes: {
-        '@emp/react-pro': 'empReactPro@http://localhost:8001/emp.js',
-      },
+      name: projectName,
+      // remotes: {
+      //   '@emp/react-pro': 'empReactPro@http://localhost:80/emp-react-jj-manage.js',
+      // },
       exposes: {
         './App': 'src/App',
-        './pages/User/Test.js': 'src/pages/User/Test.js',
+        './pages/User/Test': 'src/pages/User/Test',
         './pages/Login/Login': 'src/pages/Login/Login',
         './components/Hello': 'src/components/Hello',
         './helper': 'src/helper',
       },
-      shared: {...dependencies},
+      shared: {
+        react: {eager: true, singleton: true, requiredVersion: '^17.0.1'},
+        'react-dom': {eager: true, singleton: true, requiredVersion: '^17.0.1'},
+      },
       // 被远程引入的文件名
       filename: 'emp.js',
     }
@@ -41,7 +44,7 @@ module.exports = ({config, env, empEnv}) => {
       ...args[0],
       ...{
         // head 的 title
-        title: 'EMP - Project',
+        title: 'EMP-React-Project-JJ-Manage',
         // 远程调用项目的文件链接
         files: {},
       },

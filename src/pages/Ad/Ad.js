@@ -22,7 +22,7 @@ export default function Ad() {
       render: (text, row, index) => {
         return (
           // <div>{row.url}</div>
-          <img src={`http://localhost:3000/static/${row.url}`} style={{width: '60px', height: '60px'}} />
+          <img src={`http://localhost:4001/static/${row.url}`} style={{width: '60px', height: '60px'}} />
         )
       },
     },

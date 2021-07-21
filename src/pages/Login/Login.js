@@ -12,16 +12,20 @@ export function Login() {
   const token = useSelector(state => state?.user?.uinfo?.token)
   const dispatch = useDispatch()
   const onFinish = async values => {
-    const {remember, ...form} = values
-    const uinfo = await auth(form)
-    if (uinfo) {
-      localStorage.setItem('token', uinfo.token)
-      dispatch(actions.setUserInfo(uinfo))
-      await dispatch({type: 'FETCH_DICT'})
-      notification.success({
-        message: '登录成功',
-      })
-      history.push('/')
+    try {
+      const {remember, ...form} = values
+      const uinfo = await auth(form)
+      if (uinfo) {
+        localStorage.setItem('token', uinfo.token)
+        dispatch(actions.setUserInfo(uinfo))
+        await dispatch({type: 'FETCH_DICT'})
+        notification.success({
+          message: '登录成功',
+        })
+        history.push('/')
+      }
+    } catch (err) {
+      console.error(err)
     }
   }
   const onFinishFailed = ({errorFields: [{name}]}) => {

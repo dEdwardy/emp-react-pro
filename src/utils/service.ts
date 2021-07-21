@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {notification} from 'antd'
-export const baseUrl = 'http://localhost:3000'
+export const baseUrl = '/jj-manage-api'
+// export const baseUrl = 'http://localhost:4001'
 
 // axios的实例及拦截器配置
 const instance = axios.create({

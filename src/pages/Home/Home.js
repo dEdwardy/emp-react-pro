@@ -9,9 +9,13 @@ import './Home.scss'
 const {SubMenu} = Menu
 const {Header, Content, Footer, Sider} = Layout
 export function Home(props) {
+  const history = useHistory()
+  const token = localStorage.getItem('token')
+  if (!token) {
+    history.replace('/login')
+  }
   const [openKeys, setOpenKeys] = useState([])
   const dispatch = useDispatch()
-  const history = useHistory()
   const User = lazy(() => import('../User/User'))
   const Category = lazy(() => import('../Category/Category'))
   const Tag = lazy(() => import('../Tag/Tag'))
@@ -88,6 +92,7 @@ export function Home(props) {
   const handleClickMenu = ({key}) => {
     switch (key) {
       case 'c':
+        localStorage.removeItem('token')
         dispatch(actions.setUserInfo({}))
         history.push('/login')
         break
